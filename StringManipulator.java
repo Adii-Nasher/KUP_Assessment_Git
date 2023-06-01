@@ -28,6 +28,17 @@ public class StringManipulator {
         return duplicates;
     }
 
+    public static int countVowels(String inputString) {
+        int count = 0;
+        String vowels = "aeiouAEIOU";
+        for (int index = 0; index < inputString.length(); index++) {
+            if (vowels.contains(String.valueOf(inputString.charAt(index)))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -49,5 +60,8 @@ public class StringManipulator {
 
         List<Integer> duplicateNumbers = findDuplicates(numbers);
         System.out.println("Duplicate Numbers: " + duplicateNumbers);
+
+        int noOfVowels = countVowels(input);
+        System.out.println("Number of vowels in the string: " + noOfVowels);
     }
 }
